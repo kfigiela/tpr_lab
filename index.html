@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TPR: Lab 1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+         @import url(http://fonts.googleapis.com/css?family=Voces&subset=latin,latin-ext);
+
+         body {
+           font-family: 'Voces';
+           font-size: 20px;
+         }
+         h1, h2, h3 {
+           font-family: 'Voces';
+           font-weight: 400;
+           margin-bottom: 0;
+         }
+         h1 { font-size: 3em; line-height: 1.2em; }
+         h2 { font-size: 2em; }
+         h3 { font-size: 1.6em; }
+         .footnote {
+           position: absolute;
+           bottom: 3em;
+         }
+         li { line-height: 1.4em; }
+         .red { color: #fa0000; }
+         .large { font-size: 2em; }
+         a, a > code {
+           color: rgb(249, 38, 114);
+           text-decoration: none;
+         }
+         code {
+           -moz-border-radius: 5px;
+           -web-border-radius: 5px;
+           background: #e7e8e2;
+           border-radius: 5px;
+           font-size: 16px;
+         }
+         .pull-left {
+           float: left;
+           width: 47%;
+         }
+         .pull-right {
+           float: right;
+           width: 47%;
+         }
+         .pull-right ~ p {
+           clear: both;
+         }
+         #slideshow .slide .content code {
+           font-size: 0.8em;
+         }
+         #slideshow .slide .content pre code {
+           font-size: 0.9em;
+           padding: 15px;
+         }
+         .inverse {
+           background: #272822;
+           color: #777872;
+           text-shadow: 0 0 20px #333;
+         }
+         .inverse h1, .inverse h2 {
+           color: #f3f3f3;
+           line-height: 0.8em;
+         }
+
+         /* Slide-specific styling */
+         #slide-inverse .footnote {
+           bottom: 12px;
+           left: 20px;
+         }
+         #slide-how .slides {
+           font-size: 0.9em;
+           position: absolute;
+           top:  151px;
+           right: 140px;
+         }
+         #slide-how .slides h3 {
+           margin-top: 0.2em;
+         }
+         #slide-how .slides .first, #slide-how .slides .second {
+           padding: 1px 20px;
+           height: 90px;
+           width: 120px;
+           -moz-box-shadow: 0 0 10px #777;
+           -webkit-box-shadow: 0 0 10px #777;
+           box-shadow: 0 0 10px #777;
+         }
+         #slide-how .slides .first {
+           background: #fff;
+           position: absolute;
+           top: 20%;
+           left: 20%;
+           z-index: 1;
+         }
+         #slide-how .slides .second {
+           position: relative;
+           background: #fff;
+           z-index: 0;
+         }
+
+         /* Two-column layout */
+         .left-column {
+           color: #777;
+           width: 20%;
+           height: 92%;
+           float: left;
+         }
+           .left-column h2:last-of-type, .left-column h3:last-child {
+             color: #000;
+           }
+         .right-column {
+           width: 75%;
+           float: right;
+           padding-top: 2em;
+         }
+       </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse
+
+# Techniki Programowania Równoległego
+
+---
+
+class: middle
+## ![Avatar](http://olorin.info/av/av120.jpg) mgr inż. Kamil Figiela
+
+.right-column[
+
+* 1 i 3 zajęcia 
+* Preferowany kontakt mailowy [kfigiela@agh.edu.pl](mailto:kfigiela@agh.edu.pl)
+* Można mnie spoktać na forum
+* Pokój 3.42
+]
+---
+# Organizacja zajęć
+
+* Blokowy (poziomy) podział zajęć.
+* Laboratoria prowadzą:
+  * dr inż. Renata Słota (1 zajęcia; MPI),
+  * dr inż. Witold Alda (4 zajęcia; GPU),
+  * dr inż. Włodzimierz Funika (1 zajęcia; MPI),
+  * mgr inż. Kamil Figiela (2 zajęcia; MPI),
+  * mgr inż. Dariusz Król (3 zajęcia; OpenMPI, Scalarm),
+  * mgr inż. Michał Orzechowski (2 zajęcia; MPI, MapReduce).
+* Plan zajęć:
+  1. MPI (5 zajęcia),
+  1. MapReduce (1 zajęcia),
+  1. OpenMP (2 zajęcia),
+  1. Platforma Scalarm (1 zajęcia),
+  1. Obliczenia na GPU, CUDA etc. (4 zajęcia).
+
+
+---
+class: middle
+
+# Zasady oceniania
+
+* Punktacja pierwszych 9 spotkań (waga 2/3 do oceny)
+  * 9 ćwiczeń laboratoryjnych, na każdych do zdobycia:
+    * 3 punkty za ćwiczenia z zajęć,
+    * 2 punkty za aktywność;
+  * 5 sprawozdań z zadań domowych, każde warte 9 punktów.
+* Wszystkie sprawozdania są obowiązkowe.
+* Łącznie można zdobyć 90 punktów.
+* Oceny wyliczane zgodnie z regulaminem studiów, za 100% przyjmujemy 80 punktów.
+* Zasady oceniania zajęć z GPU przedstawi dr Alda.
+
+---
+
+class: middle
+
+# Moodle
+
+* http://upel.agh.edu.pl/wiet/
+* Kurs: Techniki programowania równoległego
+* Klucz do kursu: `TPR2014`
+
+---
+
+class: center, middle
+
+# Konta na serwerze gandalf.icsr.agh.edu.pl
+
+## Czy jest ktoś bez konta?
+
+---
+class: middle
+
+# Konta na serwerach Cyfronetu/PLGrid/Zeus
+
+1. http://plgrid.pl › Rejestracja
+2. Należy podać:
+  * Opiekun: Renata Słota
+  * nr OPI opiekuna: 93749
+  * nasz typ OPI: podopieczny
+  * temat badań: AGH. Techniki Programowania Równoległego
+3. `ssh login@ui.cyfronet.pl`
+4. HowTo: https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid
+
+---
+
+class: center, middle
+
+# Techniki Programowania Równoległego
+
+---
+class: middle
+
+# Plan na dziś
+
+1. Uruchomienie Hello World!
+  * Python
+  * C
+  * C++ i Boost
+2. Prosta komunikacja w MPI
+3. Pomiar czasu dla ping-pong
+4. Aplikacje typu master-slave
+5. Zadanie domowe
+
+
+---
+class: middle
+
+# Środowisko
+
+* Klaster dostępny m.in. z serwera gandalf
+* Credentiale takie same jak na gandalfie
+* SSH z gandalfa nie wymaga podawania hasła!
+* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
+* Wirtualny klaster
+  * 3 maszyny x 4 CPU (nody 01, 02, 03)
+  * 12 maszyn x 1 CPU (nody od 04 do 15)
+
+
+---
+
+## Krótki tutorial po MPI
+
+### Konfiguracja
+
+* Przykłady: `git clone https://github.com/kfigiela/mpi_p2p_lab.git`
+* Tworzymy plik `mpihosts`
+* Ustawiamy środowisko (np. w `~/.bash_profile`) - `source profile.sh`:
+```shell
+export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
+```
+* Dla zainteresowanych - dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
+  * OpenMPI można załadować za pomocą polecenia
+    ```shell
+    $ module load openmpi-x86_64
+    ```
+  * Trzeba wtedy zmienić w/w zmienną środowiskową
+  
+---
+
+## Hello world! w Pythonie
+
+Dokumentacja mpi4py: http://mpi4py.scipy.org/docs/usrman/index.html
+
+```python
+#!/usr/bin/python
+from mpi4py import MPI
+import socket
+
+comm = MPI.COMM_WORLD
+print("hello world")
+print("my rank is: %d, at node %s"%(comm.rank, socket.gethostname()))
+```
+### Uruchomienie
+```shell
+$ chmod +x hello_world.py
+$ mpiexec -machinefile ~/mpihosts -np [liczba procesów] ./hello_world.py
+```
+
+
+---
+
+## Komunikacja w Pythonie
+
+```python
+#!/usr/bin/python
+from mpi4py import MPI
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+
+if rank == 0:
+   data = ('abc',123)
+   comm.send(data, dest=1)
+elif rank == 1:
+   data = comm.recv(source=0)
+   print data
+else:
+   print "Expected only two nodes"
+```
+
+---
+
+
+## Hello world! w C
+
+* Dokumentacja i standard: http://www.mcs.anl.gov/research/projects/mpi/
+* Tutorial http://mpitutorial.com/ i przykłady https://github.com/wesleykendall/mpitutorial
+
+```cpp
+#include <stdio.h>
+#include <mpi.h>
+
+int main (int argc, char * argv[])
+{
+  int rank, size;
+
+  MPI_Init (&argc, &argv);  /* starts MPI */
+  MPI_Comm_rank (MPI_COMM_WORLD, &rank);  /* get current process id */
+  MPI_Comm_size (MPI_COMM_WORLD, &size);  /* get number of processes */
+  printf( "Hello world from process %d of %d\n", rank, size );
+  MPI_Finalize();
+  return 0;
+}
+
+
+```
+### Kompilacja
+```shell
+$ mpicc hello_world.c
+```
+
+
+
+---
+
+## Komunikacja w C
+
+```cpp
+#include <mpi.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+  MPI_Init(NULL, NULL);
+  int world_rank;
+  MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+  int world_size;
+  MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+
+  // We are assuming at least 2 processes for this task
+  if (world_size < 2) {
+    fprintf(stderr, "World size must be greater than 1 for %s\n", argv[0]);
+    MPI_Abort(MPI_COMM_WORLD, 1); 
+  }
+  int number;
+  if (world_rank == 0) {
+    // If we are rank 0, set the number to -1 and send it to process 1
+    number = -1;
+    MPI_Send(&number, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
+  } else if (world_rank == 1) {
+    MPI_Recv(&number, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    printf("Process 1 received number %d from process 0\n", number);
+  }
+  MPI_Finalize();
+}
+```
+
+
+---
+
+# Hello world! w C++ i Boost
+
+Dokumentacja: http://www.boost.org/doc/libs/1_55_0/doc/html/mpi.html
+
+```cpp
+#include <boost/mpi/environment.hpp>
+#include <boost/mpi/communicator.hpp>
+#include <iostream>
+namespace mpi = boost::mpi;
+
+int main()
+{
+  mpi::environment env;
+  mpi::communicator world;
+  std::cout << "I am process " << world.rank() << " of " << world.size()
+            << "." << std::endl;
+  return 0;
+}
+
+```
+
+### Kompilacja
+
+```shell
+$ mpic++ -lboost_mpi hello_world.cpp
+```
+
+---
+
+## Komunikacja w C++ i Boost
+
+```cpp
+#include <boost/mpi.hpp>
+#include <iostream>
+#include <string>
+#include <boost/serialization/string.hpp>
+namespace mpi = boost::mpi;
+
+int main()
+{
+  mpi::environment env;
+  mpi::communicator world;
+
+  if (world.rank() == 0) {
+    world.send(1, 0, std::string("Hello world!"));
+  } else if(world.rank() == 1) {
+    std::string msg;
+    world.recv(0, 0, msg);
+    std::cout << msg << std::endl;
+  }
+
+  return 0;
+}
+```
+
+---
+
+# Ćwiczenia na zajęcia
+
+---
+class: middle
+# Zadanie domowe
+
+Należy przetestować dwa różne typy komunikacji P2P w MPI i narysować wykres przepustowości [Mbit/s] od długości komunikatów [B]. 
+
+Zadanie do zrealizowania w zespołach 4 osobowych: 3 osoby implementują testy w C/C++/Python. Czwarta osoba uruchamia kody pozostałych osób i przeprowadza testy na klastrze Zeus.
+
+### Sugestie
+
+* Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org).
+* Upewnijcie się, że macie tą samą metodę testów/pomiarów.
+
+
+---
+class: middle
+# Zasady oceniania zadania
+
+* Sprawozdanie stanowią:
+  * wykresy,
+  * kod programu,
+  * wyniki pomiarów,
+  * wiedza/komentarz/odpowiedź na pytania.
+* Nic nie drukujemy, nie trzeba tworzyć dokumentu sprawozdania, ale warto zrobić notatki z wnioskami.
+* Wykresy bez podpisanych osi i bez dodatkowych informacji nie będą przyjmowane
+* Punktacja:
+ * 2 punkty za poprawny kod i jego znajomość,
+ * 2 punkty za poprawne wykresy i ich znajomość,
+ * 2 punkty za poprawne wyniki,
+ * 3 punkty za odpowiedź na pytania teoretyczne z danego zagadnienia.
+
+
+---
+
+class: middle, center, inverse
+
+# Za tydzień!
+## Prowadzi dr. inż. Włodzimierz Funika
+## Tematem będzie komunikacja grupowa
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-0.6.0.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({highlightStyle: 'monokai'});
+    </script>
+  </body>
+</html>
