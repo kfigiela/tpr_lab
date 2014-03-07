@@ -3,6 +3,7 @@
   <head>
     <title>TPR: Lab 1</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="robots" content="noindex, nofollow">.
     <style type="text/css">
          @import url(http://fonts.googleapis.com/css?family=Voces&subset=latin,latin-ext);
 
@@ -226,17 +227,19 @@ class: middle
 
 # Środowisko
 
+* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
 * Klaster dostępny m.in. z serwera gandalf
 * Credentiale takie same jak na gandalfie
-* SSH z gandalfa nie wymaga podawania hasła!
-* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
-* Wirtualny klaster
+* SSH z gandalfa nie wymaga podawania hasła
+* `$HOME` jest współdzielony z gandalfem (NFS)
+* Większe operacje IO lepiej wykonywać w lokalnym `/tmp`
+* Klaster jest zwirtualizowany
   * 3 maszyny x 4 CPU (nody 01, 02, 03)
   * 12 maszyn x 1 CPU (nody od 04 do 15)
 
 
 ---
-
+class: middle
 ## Krótki tutorial po MPI
 
 ### Konfiguracja
@@ -255,7 +258,7 @@ export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
   * Trzeba wtedy zmienić w/w zmienną środowiskową
   
 ---
-
+class: middle
 ## Hello world! w Pythonie
 
 Dokumentacja mpi4py: http://mpi4py.scipy.org/docs/usrman/index.html
@@ -277,7 +280,7 @@ $ mpiexec -machinefile ~/mpihosts -np [liczba procesów] ./hello_world.py
 
 
 ---
-
+class: middle
 ## Komunikacja w Pythonie
 
 ```python
@@ -297,8 +300,7 @@ else:
 ```
 
 ---
-
-
+class: middle
 ## Hello world! w C
 
 * Dokumentacja i standard: http://www.mcs.anl.gov/research/projects/mpi/
@@ -330,7 +332,7 @@ $ mpicc hello_world.c
 
 
 ---
-
+class: middle
 ## Komunikacja w C
 
 ```cpp
@@ -365,8 +367,8 @@ int main(int argc, char** argv) {
 
 
 ---
-
-# Hello world! w C++ i Boost
+class: middle
+## Hello world! w C++ i Boost
 
 Dokumentacja: http://www.boost.org/doc/libs/1_55_0/doc/html/mpi.html
 
@@ -394,7 +396,7 @@ $ mpic++ -lboost_mpi hello_world.cpp
 ```
 
 ---
-
+class: middle
 ## Komunikacja w C++ i Boost
 
 ```cpp
@@ -422,8 +424,54 @@ int main()
 ```
 
 ---
+class: middle
 
-# Ćwiczenia na zajęcia
+# Ćwiczenie 1
+## Sposoby komunikacji
+
+* Przetestuj rózne sposoby komunikacji P2P dostępne w MPI.
+* Sposoby komunikacji [1]
+  * Standard send `MPI_Send`
+  * Synchronous send `MPI_Ssend`
+  * Buffered send `MPI_Bsend`
+  * Ready send `MPI_Rsend`
+  * Non-blocking send `MPI_Isend` + `MPI_Wait`, `MPI_Test`
+* Odbieranie danych `MPI_Recv`, `MPI_Irecv`
+
+.footnote[[1] http://www.dartmouth.edu/~rc/classes/intro_mpi/mpi_comm_modes.html]
+
+???
+
+* Złosliwe pytanie: Jak działa komunikacja standardowa?
+
+---
+class: middle
+
+# Ćwiczenie 2
+## Mierzenie opóźnień w aplikacji ping–pong
+
+* Zaimplementuj aplikację, gdzie 2 węzły wymieniają się komunikatami (ping–pong).
+* Sprawdź zwykłą i buforowaną komunikację.
+* Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`). W jaki sposób należy dokonać pomiaru?
+
+---
+class: middle
+
+# Ćwiczenie 3
+## „Token ring”
+
+* Zaimplementuj aplikację, w której każdy node przesyła do kolejnego otrzymaną daną.
+* Sprawdź zwykłą i synchroniczną komunikację.
+* Jak poprzednio dokonaj pomiarów.
+---
+class: middle
+
+# Ćwiczenie 4
+## Master–slave w MPI
+
+Dwa podejścia:
+ * wszystko w 1 pliku (master dla rank == 0, slave dla pozostałych),
+ * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`): http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm
 
 ---
 class: middle
