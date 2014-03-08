@@ -280,13 +280,13 @@ class: middle
 
 * Przykłady: `git clone https://github.com/kfigiela/mpi_p2p_lab.git`
 * Tworzymy plik `mpihosts`
-* Ustawiamy środowisko (np. w `~/.bash_profile`) - `source profile.sh`:
-```shell
+* Ustawiamy środowisko (np. w `~/.bash_profile`) – `source profile.sh`:
+```
 export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 ```
 * Dla zainteresowanych - dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
   * OpenMPI można załadować za pomocą polecenia
-    ```shell
+    ```
     $ module load openmpi-x86_64
     ```
   * Trzeba wtedy zmienić w/w zmienną środowiskową
@@ -306,7 +306,7 @@ print("hello world")
 print("my rank is: %d, at node %s"%(comm.rank, socket.gethostname()))
 ```
 ### Uruchomienie
-```shell
+```
 $ chmod +x hello_world.py
 $ mpiexec -machinefile ~/mpihosts -np [liczba procesów] ./hello_world.py
 ```
@@ -581,20 +581,13 @@ apps/bamtools/2.3.0
 
   * Obsługa systemu kolejkowego (PBS): https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614
   * Tutoriale dla inneych klastrów (przykłady dla MPI):
-     * http://kdm.wcss.wroc.pl/wiki/MPIEXEC
-     * http://www.icm.edu.pl/kdm/System_kolejkowy
-  * U nas: `qsub -I -q plgrid -l nodes=2:ppn=12`
-    * `nodes=2` – liczba węzłów
-    * `ppn=12` – liczba rdzeni na każdym węźle
-    * Dalej normalnie – `mpiexec`, liczby procesorów, machinefile nie trzeba podawać
-
----
-class: middle, center, inverse
-
-# Za tydzień!
-## Prowadzi dr. inż. Włodzimierz Funika
-## Tematem będzie komunikacja grupowa
-
+     * http://kdm.wcss.wroc.pl/wiki/MPIEXEC,
+     * http://www.icm.edu.pl/kdm/System_kolejkowy.
+  * U nas: `qsub -I -q plgrid -l nodes=2:ppn=12`:
+    * `nodes=2` – liczba węzłów,
+    * `ppn=12` – liczba rdzeni na każdym węźle.
+    * Po zakolejkowaniu zadania otrzymamy interaktywną konsolę.
+    * Dalej normalnie – `mpiexec`, liczby procesorów, machinefile nie trzeba podawać.
 </textarea>
   <script src="http://gnab.github.io/remark/downloads/remark-0.6.0.min.js" type="text/javascript">
   </script>
