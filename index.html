@@ -149,13 +149,13 @@ końcowa)
 
 Zajęcia laboratoryjne prowadzą:
 
-* Cz.1 (blokowo)
+* Część 1 (blokowo)
   * dr inż. Renata Słota (1 zajęcia),
   * dr inż. Włodzimierz Funika (1 zajęcia),
   * mgr inż. Kamil Figiela (2 zajęcia),
   * mgr inż. Dariusz Król (3 zajęcia),
   * mgr inż. Michał Orzechowski (2 zajęcia).
-* Cz.2 (grupy)
+* Część 2 (grupy)
   * dr inż. Witold Alda (6 grup)
   * mgr inż. Dariusz Król (3 grupy)
 
@@ -242,8 +242,6 @@ class: center, middle
 # Techniki Programowania Równoległego
 
 ---
-class: middle
-
 # Plan na dziś
 
 1. Uruchomienie Hello World!
@@ -257,29 +255,26 @@ class: middle
 
 
 ---
-class: middle
-
 # Środowisko
 
-* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
+* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl` albo po prostu `ssh vnode-01`
 * Klaster dostępny m.in. z serwera `gandalf.icsr.agh.edu.pl`
 * Credentiale takie same jak na gandalfie
 * SSH z gandalfa nie wymaga podawania hasła
 * `$HOME` jest współdzielony z gandalfem (NFS)
 * Większe operacje IO lepiej wykonywać w lokalnym `/tmp`
 * Klaster jest zwirtualizowany
-  * 3 maszyny x 4 CPU (nody 01, 02, 03)
-  * 12 maszyn x 1 CPU (nody od 04 do 15)
+  * 4 maszyny x 4 CPU (nody 01, 02, 03, 04)
+  * 8 maszyn x 1 CPU (nody od 05 do 12)
 
 
 ---
-class: middle
 ## Krótki tutorial po MPI
 
 ### Konfiguracja
 
 * Przykłady: `git clone https://github.com/kfigiela/mpi_p2p_lab.git`
-* Tworzymy plik `mpihosts`
+* Tworzymy plik `mpihosts` (tzw. machinefile)
 * Ustawiamy środowisko (np. w `~/.bash_profile`) – `source profile.sh`:
 ```
 export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
@@ -290,6 +285,7 @@ export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
     $ module load openmpi-x86_64
     ```
   * Trzeba wtedy zmienić w/w zmienną środowiskową
+* Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
   
 ---
 ## Hello world! w Pythonie
@@ -468,8 +464,6 @@ int main()
 ```
 
 ---
-class: middle
-
 # Ćwiczenie 1
 ## Sposoby komunikacji
 
@@ -489,8 +483,6 @@ class: middle
 * Złosliwe pytanie: Jak działa komunikacja standardowa?
 
 ---
-class: middle
-
 # Ćwiczenie 2
 ## Mierzenie opóźnień
 
@@ -499,8 +491,6 @@ class: middle
 * Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`). W jaki sposób należy dokonać pomiaru?
 
 ---
-class: middle
-
 # Ćwiczenie 3
 ## „Token ring”
 
@@ -508,8 +498,6 @@ class: middle
 * Sprawdź zwykłą i synchroniczną komunikację.
 * Jak poprzednio dokonaj pomiarów.
 ---
-class: middle
-
 # Ćwiczenie 4
 ## Master–slave w MPI
 
@@ -519,7 +507,6 @@ Dwa podejścia:
  * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`): http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm
 
 ---
-class: middle
 # Zadanie domowe
 
 Należy przetestować dwa różne typy komunikacji P2P w MPI i narysować wykres przepustowości [Mbit/s] od długości komunikatów [B]. 
@@ -534,7 +521,6 @@ Należy przetestować dwa różne typy komunikacji P2P w MPI i narysować wykres
 * Upewnijcie się, że macie tą samą metodę testów/pomiarów.
 
 ---
-class: middle
 # Zasady oceniania zadania
 
 * Sprawozdanie stanowią:
@@ -551,7 +537,6 @@ class: middle
   * 3 punkty za odpowiedź na pytania teoretyczne z danego zagadnienia.
 
 ---
-
 # Zeus
 
 System modułów – oprogramowanie ładowane do `$PATH` na żądanie
@@ -580,7 +565,7 @@ apps/bamtools/2.3.0
 # Zeus
 
   * Obsługa systemu kolejkowego (PBS): https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614
-  * Tutoriale dla inneych klastrów (przykłady dla MPI):
+  * Tutoriale dla innych klastrów (przykłady uruchomienia dla MPI):
      * http://kdm.wcss.wroc.pl/wiki/MPIEXEC,
      * http://www.icm.edu.pl/kdm/System_kolejkowy.
   * U nas: `qsub -I -q plgrid -l nodes=2:ppn=12`:
