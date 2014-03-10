@@ -365,8 +365,6 @@ int main (int argc, char * argv[])
   MPI_Finalize();
   return 0;
 }
-
-
 ```
 ### Kompilacja
 ```shell
@@ -509,8 +507,12 @@ Dwa podejścia:
 ---
 # Zadanie domowe
 
-Należy przetestować dwa różne typy komunikacji P2P w MPI i narysować wykres przepustowości [Mbit/s] od długości komunikatów [B]. 
+Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klastrze. 
 
+* Należy przetestować dwa różne typy komunikacji P2P w MPI. 
+* Należy dokonać pomiarów i narysować wykresy:
+  * przepustowości [Mbit/s] od długości komunikatów [B],
+  * opóźnienia [ms] od długości komunikatów [B]. 
 * Zespoły 4 osobowe:
   * 3 osoby implementują testy w C/C++/Python,
   * czwarta osoba uruchamia kody pozostałych osób i przeprowadza testy na klastrze Zeus.
