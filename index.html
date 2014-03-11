@@ -135,7 +135,24 @@ class: middle
 * Preferowany kontakt mailowy: [kfigiela@agh.edu.pl](mailto:kfigiela@agh.edu.pl)
 * Można mnie spoktać na forum
 * Pokój 3.42
+
 ]
+
+---
+class: center, middle
+
+# Konta na serwerze gandalf.icsr.agh.edu.pl
+
+## Czy jest ktoś bez konta?
+
+---
+class: middle
+
+# Moodle
+
+* Kurs: Techniki programowania równoległego
+* http://upel.agh.edu.pl/wiet/course/view.php?id=3
+* Klucz do kursu: `TPR2014`
 
 ---
 class: middle
@@ -201,21 +218,6 @@ class: middle
 * OpenMP (spr. 5) 
 * Scalarm
 
----
-class: middle
-
-# Moodle
-
-* Kurs: Techniki programowania równoległego
-* http://upel.agh.edu.pl/wiet/course/view.php?id=3
-* Klucz do kursu: `TPR2014`
-
----
-class: center, middle
-
-# Konta na serwerze gandalf.icsr.agh.edu.pl
-
-## Czy jest ktoś bez konta?
 
 ---
 class: center, middle
@@ -442,6 +444,14 @@ int main()
   return 0;
 }
 ```
+---
+## Master–slave w MPI
+
+Dwa podejścia:
+
+ * wszystko w 1 pliku (master dla rank == 0, slave dla pozostałych) – jak w poprzednich przykładach;
+ * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`),
+   * http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm.
 
 ---
 # Ćwiczenie 1
@@ -479,36 +489,30 @@ int main()
 * Zaimplementuj aplikację, w której każdy node przesyła do kolejnego otrzymaną daną.
 * Sprawdź zwykłą i synchroniczną komunikację.
 * Jak poprzednio dokonaj pomiarów.
----
-# Ćwiczenie 4
-## Master–slave w MPI
-
-Dwa podejścia:
-
- * wszystko w 1 pliku (master dla rank == 0, slave dla pozostałych),
- * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`): http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm
 
 ---
 # Zadanie domowe
 
 Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klastrze. 
 
-* Należy przetestować dwa różne typy komunikacji P2P w MPI. 
+* Należy przetestować dwa różne typy komunikacji P2P w MPI.
 * Należy dokonać pomiarów i narysować wykresy:
   * przepustowości [Mbit/s] od długości komunikatów [B],
   * opóźnienia [ms] od długości komunikatów [B]. 
 * Zespoły 4 osobowe:
   * 3 osoby implementują testy w C/C++/Python,
+  * testy powinny być przeprowadzone tą samą metodą (liczba iteracji, zakres rozmiaru danych itp.),
   * czwarta osoba uruchamia kody pozostałych osób i przeprowadza testy na klastrze Zeus.
+* **Uwaga!** W C++/Boost dostępna jest tylko komunikacja standardowa i tylko taką można w tam przetestować. 
+  * Testy dla komunikacji standardowej.
+  * Przetestować wbudowane w bibliotekę boost mechanizmy automatycznej serializacji standardowych struktur z STL (vector, map, string, etc.) - ocenić overhead serializacji dla typu `vector`. 
+* **Sugestia:** Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org).
 
-### Sugestie
-
-* Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org).
-* Upewnijcie się, że macie tą samą metodę testów/pomiarów.
 
 ---
 # Zasady oceniania zadania
 
+* Sprawozdania są indywidualne!
 * Sprawozdanie stanowią:
   * wykresy,
   * kod programu,
@@ -542,7 +546,7 @@ class: middle
 4. HowTo: https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid
 
 ---
-# Zeus
+# Uruchamianie MPI na klastrze Zeus
 
 System modułów – oprogramowanie ładowane do `$PATH` na żądanie
 
@@ -562,12 +566,12 @@ apps/autodock/4.2.3
 apps/bamtools/2.3.0
 .....
 
-[plgkfigiela@zeus ~]$ module load tools/mpich
- 'tools/mpich/3.0.4' load complete.
+[plgkfigiela@zeus ~]$ module load el6/apps/ruby/2.0.0-p247
+ 'el6/apps/ruby/2.0.0-p247' load complete.
 ```
 
 ---
-# Zeus
+# Uruchamianie MPI na klastrze Zeus
 
   * Obsługa systemu kolejkowego (PBS): https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614
   * Tutoriale dla innych klastrów (przykłady uruchomienia dla MPI):
@@ -577,7 +581,27 @@ apps/bamtools/2.3.0
     * `nodes=2` – liczba węzłów,
     * `ppn=12` – liczba rdzeni na każdym węźle.
     * Po zakolejkowaniu zadania otrzymamy interaktywną konsolę.
-    * Dalej normalnie – `mpiexec`, liczby procesorów, machinefile nie trzeba podawać.
+    * Dalej normalnie – `mpiexec`, liczby procesorów oraz machinefile nie należy podawać.
+
+---
+# Uruchamianie MPI na klastrze Zeus
+
+```
+[plgkfigiela@zeus ~]$ qsub -I -q plgrid-testing -l nodes=2:ppn=12
+...
+
+[plgkfigiela@zeus ~]$ module load libs/boost/1.52.0
+ 'tools/python/2.7.2-ucs4' load complete.
+ 'tools/openmpi/1.6.3-gnu-4.1.2-ib' load complete.
+ 'libs/boost/1.52.0' load complete.
+ 
+[plgkfigiela@zeus mpi_lab]$ pip install --user mpi4py
+....
+
+[plgkfigiela@zeus mpi_lab]$ mpicc -o hello_c hello_world.c
+[plgkfigiela@zeus mpi_lab]$ mpic++ -o hello_c++ -L $BOOST_ROOT/lib -lboost_mpi hello_world.cpp
+```
+
 </textarea>
   <script src="http://gnab.github.io/remark/downloads/remark-0.6.0.min.js" type="text/javascript">
   </script>
