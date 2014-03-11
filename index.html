@@ -285,7 +285,7 @@ print("my rank is: %d, at node %s"%(comm.rank, socket.gethostname()))
 ### Uruchomienie
 ```
 $ chmod +x hello_world.py
-$ mpiexec -machinefile ~/mpihosts -np [liczba procesów] ./hello_world.py
+$ mpiexec -machinefile ./mpihosts -np [liczba procesów] ./hello_world.py
 ```
 
 
