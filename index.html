@@ -160,8 +160,7 @@ class: middle
 
 Wykład prowadzą:
 
-* dr inż. Renata Słota (~10, ocena
-końcowa)
+* dr inż. Renata Słota (~10, ocena końcowa)
 * dr inż. Witold Alda (5)
 
 Zajęcia laboratoryjne prowadzą:
@@ -263,20 +262,16 @@ class: center, middle
 export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 ```
 * Dla zainteresowanych - dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
-  * OpenMPI można załadować za pomocą polecenia
-    ```
-    $ module load openmpi-x86_64
-    ```
-  * Trzeba wtedy zmienić w/w zmienną środowiskową
 * Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
   
 ---
 ## Hello world! w Pythonie
 
-Dokumentacja mpi4py: http://mpi4py.scipy.org/docs/usrman/index.html
+* Dokumentacja mpi4py: http://mpi4py.scipy.org/docs/usrman/index.html
+* API: http://mpi4py.scipy.org/docs/apiref/index.html
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python
 from mpi4py import MPI
 import socket
 
@@ -295,7 +290,7 @@ $ mpiexec -machinefile ./mpihosts -np [liczba procesów] ./hello_world.py
 ## Komunikacja w Pythonie
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/env python
 from mpi4py import MPI
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
@@ -314,17 +309,21 @@ else:
 ## Hello world! w Fortranie ;-)
 
 ```fortran
-c  Fortran example  
-   program hello
-   include 'mpif.h'
-   integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
-   
-   call MPI_INIT(ierror)
-   call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
-   call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
-   print*, 'node', rank, ': Hello world'
-   call MPI_FINALIZE(ierror)
-   end
+  program hello
+
+  include 'mpif.h'
+  integer rank, size, ierror, tag, status(MPI_STATUS_SIZE)
+
+  call MPI_INIT(ierror)
+  call MPI_COMM_SIZE(MPI_COMM_WORLD, size, ierror)
+  call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierror)
+  print*, 'node', rank, ': Hello world'
+  call MPI_FINALIZE(ierror)
+  end
+```
+### Kompilacja
+```shell
+$ mpif90 hello_world.f90
 ```
 
 ---
@@ -465,14 +464,12 @@ Dwa podejścia:
   * Ready send `MPI_Rsend`
   * Non-blocking send `MPI_Isend` + `MPI_Wait`, `MPI_Test`
 * Odbieranie danych `MPI_Recv`, `MPI_Irecv`
+* **Jak działa komunikacja standardowa?**
 
 .footnote[
 [1] http://www.dartmouth.edu/~rc/classes/intro_mpi/mpi_comm_modes.html
 ]
 
-???
-
-* Złosliwe pytanie: Jak działa komunikacja standardowa?
 
 ---
 # Ćwiczenie 2
@@ -480,7 +477,8 @@ Dwa podejścia:
 
 * Zaimplementuj aplikację, gdzie 2 węzły wymieniają się komunikatami (ping–pong).
 * Sprawdź zwykłą i buforowaną komunikację.
-* Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`). W jaki sposób należy dokonać pomiaru?
+* Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`).
+* **W jaki sposób należy dokonać pomiaru?**
 
 ---
 # Ćwiczenie 3
@@ -599,6 +597,8 @@ apps/bamtools/2.3.0
 
 ---
 # Uruchamianie MPI na klastrze Zeus
+
+Moduły `libs/boost/1.41.0` oraz `libs/boost/1.52.0` mają skompilowane wsparcie dla MPI.
 
 ```
 [plgkfigiela@zeus ~]$ qsub -I -q plgrid-testing -l nodes=2:ppn=12
