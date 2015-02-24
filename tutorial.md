@@ -219,23 +219,6 @@ Dwa podejścia:
  * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`),
    * http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm.
 
----
-class: middle
-
-# Konta na serwerach Cyfronetu/PLGrid/Zeus
-
-1. http://plgrid.pl › Rejestracja
-2. Należy podać:
-  * Typ: Użytkownik
-  * Opiekun: Renata Słota
-  * Nr OPI opiekuna: 93749
-  * Nasz typ OPI: podopieczny
-  * Temat badań: AGH. Techniki Programowania Równoległego
-3. Po aktywacji konta na http://portal.plgrid.pl/ należy aktywować:
-  * Dostęp do UI - Cyfronet
-  * Dostęp do klastra ZEUS
-3. `ssh login@ui.cyfronet.pl`
-4. HowTo: https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid
 
 ---
 # Uruchamianie MPI na klastrze Zeus
