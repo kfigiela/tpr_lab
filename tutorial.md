@@ -2,8 +2,9 @@ class: center, middle, inverse
 
 # Środowisko vCluster dla MPI
 
-## Prezentacja: http://kfigiela.github.io/mpi_lab/tutorial.html
-## Do czytania: https://github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md
+Prezentacja: [kfigiela.github.io/mpi_lab/tutorial.html](http://kfigiela.github.io/mpi_lab/tutorial.html)
+
+Wersja do czytania: [github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md)
 
 ---
 # Środowisko
