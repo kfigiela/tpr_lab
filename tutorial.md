@@ -2,9 +2,9 @@ class: center, middle, inverse
 
 # Środowisko vCluster dla MPI
 
-Prezentacja: [kfigiela.github.io/mpi_lab/tutorial.html](http://kfigiela.github.io/mpi_lab/tutorial.html)
+Prezentacja: [kfigiela.github.io/tpr_lab/tutorial.html](http://kfigiela.github.io/tpr_lab/tutorial.html)
 
-Wersja do czytania: [github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md)
+Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md)
 
 ---
 # Środowisko
@@ -24,20 +24,20 @@ Wersja do czytania: [github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md](http
 
 ### Konfiguracja
 
-* Przykłady: `git clone https://github.com/kfigiela/mpi_lab.git`
+* Przykłady: `git clone https://github.com/kfigiela/tpr_lab.git -b lab1`
 * Tworzymy plik `mpihosts` (tzw. machinefile)
 * Ustawiamy środowisko (np. w `~/.bash_profile`) – `source profile.sh`:
 ```
 export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 ```
-* Dla zainteresowanych - dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
+* Dla zainteresowanych – dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
 * Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
   
 ---
 ## Hello world! w Pythonie
 
-* Dokumentacja mpi4py: http://mpi4py.scipy.org/docs/usrman/index.html
-* API: http://mpi4py.scipy.org/docs/apiref/index.html
+* Dokumentacja mpi4py: [http://mpi4py.scipy.org/docs/usrman/index.html](http://mpi4py.scipy.org/docs/usrman/index.html)
+* API: [http://mpi4py.scipy.org/docs/apiref/index.html](http://mpi4py.scipy.org/docs/apiref/index.html)
 
 ```python
 #!/usr/bin/env python
@@ -97,8 +97,8 @@ $ mpif90 hello_world.f90
 ---
 ## Hello world! w C
 
-* Dokumentacja i standard: http://www.mcs.anl.gov/research/projects/mpi/
-* Tutorial http://mpitutorial.com/ i przykłady https://github.com/wesleykendall/mpitutorial
+* Dokumentacja i standard: [mcs.anl.gov/research/projects/mpi](http://www.mcs.anl.gov/research/projects/mpi/)
+* Tutorial [mpitutorial.com](http://mpitutorial.com/) i przykłady [github.com/wesleykendall/mpitutorial](https://github.com/wesleykendall/mpitutorial)
 
 ```cpp
 #include <stdio.h>
@@ -118,7 +118,7 @@ int main (int argc, char * argv[])
 ```
 ### Kompilacja
 ```shell
-$ mpicc hello_world.c
+$ mpicc -o hello_world_c hello_world.c
 ```
 
 
@@ -159,8 +159,8 @@ int main(int argc, char** argv) {
 ---
 ## Hello world! w C++ i Boost
 
-* Dokumentacja: http://www.boost.org/doc/libs/1_55_0/doc/html/mpi.html
-* Supportowana jest tylko standardowa i asynchroniczna komunikacja http://www.boost.org/doc/libs/1_55_0/doc/html/mpi/tutorial.html#mpi.point_to_point
+* Dokumentacja: [boost.org/doc/libs/1_55_0/doc/html/mpi.html](http://www.boost.org/doc/libs/1_55_0/doc/html/mpi.html)
+* Supportowana jest tylko standardowa i asynchroniczna komunikacja [boost.org/doc/libs/1_55_0/doc/html/mpi/tutorial.html#mpi.point_to_point](http://www.boost.org/doc/libs/1_55_0/doc/html/mpi/tutorial.html#mpi.point_to_point)
 
 ```cpp
 #include <boost/mpi/environment.hpp>
@@ -182,7 +182,7 @@ int main()
 ### Kompilacja
 
 ```shell
-$ mpic++ -lboost_mpi hello_world.cpp
+$ mpic++ -o hello_world_cpp -lboost_mpi hello_world.cpp
 ```
 
 ---
@@ -218,7 +218,7 @@ Dwa podejścia:
 
  * wszystko w 1 pliku (master dla rank == 0, slave dla pozostałych) – jak w poprzednich przykładach;
  * uruchamianie innego pliku binarnego (`MPI_Comm_spawn`),
-   * http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm.
+   * [http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm](http://www.mcs.anl.gov/research/projects/mpi/mpi-standard/mpi-report-2.0/node98.htm).
 
 
 ---
@@ -226,7 +226,7 @@ Dwa podejścia:
 
 System modułów – oprogramowanie ładowane do `$PATH` na żądanie
 
-```
+```shell
 [plgkfigiela@zeus ~]$ module avail
 
 ---------- /software/local/Modules/versions ----------
@@ -249,10 +249,10 @@ apps/bamtools/2.3.0
 ---
 # Uruchamianie MPI na klastrze Zeus
 
-  * Obsługa systemu kolejkowego (PBS): https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614
+  * Obsługa systemu kolejkowego (PBS): [https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614](https://docs.plgrid.pl/pages/viewpage.action?pageId=4260614)
   * Tutoriale dla innych klastrów (przykłady uruchomienia dla MPI):
-     * http://kdm.wcss.wroc.pl/wiki/MPIEXEC,
-     * http://www.icm.edu.pl/kdm/System_kolejkowy.
+     * [http://kdm.wcss.wroc.pl/wiki/MPIEXEC](http://kdm.wcss.wroc.pl/wiki/MPIEXEC),
+     * [http://www.icm.edu.pl/kdm/System_kolejkowy](http://www.icm.edu.pl/kdm/System_kolejkowy).
   * U nas: `qsub -I -q plgrid -l nodes=2:ppn=12`:
     * `nodes=2` – liczba węzłów,
     * `ppn=12` – liczba rdzeni na każdym węźle.
@@ -265,7 +265,7 @@ apps/bamtools/2.3.0
 
 Moduły `libs/boost/1.41.0` oraz `libs/boost/1.52.0` mają skompilowane wsparcie dla MPI.
 
-```
+```shell
 [plgkfigiela@zeus ~]$ qsub -I -q plgrid-testing -l nodes=2:ppn=12
 ...
 
@@ -274,9 +274,9 @@ Moduły `libs/boost/1.41.0` oraz `libs/boost/1.52.0` mają skompilowane wsparcie
  'tools/openmpi/1.6.3-gnu-4.1.2-ib' load complete.
  'libs/boost/1.52.0' load complete.
  
-[plgkfigiela@zeus mpi_lab]$ pip install --user mpi4py
+[plgkfigiela@zeus tpr_lab]$ pip install --user mpi4py
 ....
 
-[plgkfigiela@zeus mpi_lab]$ mpicc -o hello_c hello_world.c
-[plgkfigiela@zeus mpi_lab]$ mpic++ -o hello_c++ -L $BOOST_ROOT/lib -lboost_mpi hello_world.cpp
+[plgkfigiela@zeus tpr_lab]$ mpicc -o hello_c hello_world.c
+[plgkfigiela@zeus tpr_lab]$ mpic++ -o hello_c++ -L $BOOST_ROOT/lib -lboost_mpi hello_world.cpp
 ```

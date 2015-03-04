@@ -2,23 +2,19 @@
 
 # Techniki Programowania Równoległego
 
-Prezentacja: [kfigiela.github.io/mpi_lab/tutorial.html](http://kfigiela.github.io/mpi_lab/intro.html)
+Prezentacja: [kfigiela.github.io/tpr_lab/tutorial.html](http://kfigiela.github.io/tpr_lab/intro.html)
 
-Wersja do czytania: [github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/mpi_lab/blob/gh-pages/intro.md)
+Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md)
 
 ---
 <!-- class: middle -->
 
 ## ![Avatar](http://olorin.info/av/av120.jpg) mgr inż. Kamil Figiela
 
-.right-column[
-
 * 1 i 3 zajęcia 
 * Preferowany kontakt mailowy: [kfigiela@agh.edu.pl](mailto:kfigiela@agh.edu.pl)
 * Można mnie spoktać na forum
 * Pokój 3.42
-
-]
 
 ---
 <!-- class: center, middle -->
@@ -34,7 +30,7 @@ Wersja do czytania: [github.com/kfigiela/mpi_lab/blob/gh-pages/tutorial.md](http
 
 * Kurs: Techniki programowania równoległego
 * [http://upel.agh.edu.pl/wiet/course/view.php?id=3](http://upel.agh.edu.pl/wiet/course/view.php?id=3)
-* Klucz do kursu: `TPR2014`
+* Klucz do kursu: `(pon|wt|sr|czw|pt)-(8|9|11|12)-TPR2015`
 
 ---
 <!-- class: middle -->
@@ -98,104 +94,25 @@ Zajęcia laboratoryjne prowadzą:
 
 **Oceny wyliczane są zgodnie z regulaminem studiów, za 100% przyjmujemy 80+40=120 punktó**
 
+**Zasady te są opublikowane na [Moodle](http://upel.agh.edu.pl/wiet/pluginfile.php/13641/mod_resource/content/1/zasady-2015.pdf) i to jest wiążący dokument.**
+
 ---
 # Tematyka zajęć
 
-1. MPI: Podstawowe badania dotyczące opóźnienia i przepustowości - komunikacja typu punkt–punkt (spr. 1)
-1. MPI: Komunikacja grupowa (spr. 2, odbiór spr. 1) 
-1. MPI: Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
-1. MPI: Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
-1. OpenMP (odbiór spr. 3 i 4)
-1. OpenMP (spr. 5) 
-1. MapReduce
-1. MapReduce (odbiór spr. 5)
+1. **MPI:** Podstawowe badania dotyczące opóźnienia i przepustowości – komunikacja typu punkt–punkt (spr. 1)
+1. **MPI:** Komunikacja grupowa (spr. 2, odbiór spr. 1) 
+1. **MPI:** Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
+1. **MPI:** Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
+1. **OpenMP** (odbiór spr. 3 i 4)
+1. **OpenMP** (spr. 5) 
+1. **MapReduce**
+1. **MapReduce** (odbiór spr. 5)
 1. Uzupełnienia zaległych sprawozdań  (tylko u RS): 11 do 15 maja dla cz. I labów
-1. GPU (spr.1)
-1. GPU (odbiór spr.1)
-1. GPU (spr.2)
-1. GPU (odbiór spr.2)
+1. **GPU** (spr. 1)
+1. **GPU** (odbiór spr. 1)
+1. **GPU** (spr. 2)
+1. **GPU** (odbiór spr. 2)
 1. Uzupełnienia (u właściwego prowadzącego): 15-19 czerwca dla cz. II labów
-
----
-# Plan na dziś
-
-1. Uruchomienie Hello World!
-    * Python
-    * C
-    * C++ i Boost
-2. Prosta komunikacja w MPI
-3. Pomiar czasu dla ping-pong
-4. Aplikacje typu master-slave
-5. Zadanie domowe
-
----
-# Ćwiczenie 1
-## Sposoby komunikacji
-
-* Przetestuj rózne sposoby komunikacji P2P dostępne w MPI.
-* Sposoby komunikacji [1]
-  * Standard send `MPI_Send`
-  * Synchronous send `MPI_Ssend`
-  * Buffered send `MPI_Bsend`
-  * Ready send `MPI_Rsend`
-  * Non-blocking send `MPI_Isend` + `MPI_Wait`, `MPI_Test`
-* Odbieranie danych `MPI_Recv`, `MPI_Irecv`
-* **Jak działa komunikacja standardowa?**
-
-.footnote[
-[1] [http://www.dartmouth.edu/~rc/classes/intro_mpi/mpi_comm_modes.html](http://www.dartmouth.edu/~rc/classes/intro_mpi/mpi_comm_modes.html)
-]
-
-
----
-# Ćwiczenie 2
-## Mierzenie opóźnień
-
-* Zaimplementuj aplikację, gdzie 2 węzły wymieniają się komunikatami (ping–pong).
-* Sprawdź zwykłą i buforowaną komunikację.
-* Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`).
-* **W jaki sposób należy dokonać pomiaru?**
-
----
-# Ćwiczenie 3
-## „Token ring”
-
-* Zaimplementuj aplikację, w której każdy node przesyła do kolejnego otrzymaną daną.
-* Sprawdź zwykłą i synchroniczną komunikację.
-* Jak poprzednio dokonaj pomiarów.
-
----
-# Zadanie domowe
-
-Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klastrze. 
-
-* Należy przetestować dwa różne typy komunikacji P2P w MPI.
-* Należy dokonać pomiarów::
-  * przepustowości [Mbit/s] od długości komunikatów [B]: wykres,
-  * opóźnienia [ms] przesyłania krótkiego komunikatu: wartość. 
-* Zespoły 4 osobowe:
-  * 3 osoby implementują testy w C/C++/Python,
-  * testy powinny być przeprowadzone tą samą metodą (liczba iteracji, zakres rozmiaru danych itp.),
-  * czwarta osoba uruchamia kody pozostałych osób i przeprowadza testy na klastrze Zeus.
-* **Uwaga!** W C++/Boost dostępna jest tylko komunikacja standardowa i tylko taką można w tam przetestować. 
-  * Testy dla komunikacji standardowej.
-  * Przetestować wbudowane w bibliotekę boost mechanizmy automatycznej serializacji standardowych struktur z STL (vector, map, string, etc.) - ocenić overhead serializacji dla typu `vector`. 
-* **Sugestia:** Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org).
-
-???
-
-Jeśli jest np. 13 osób – dopuszczamy zespoły 3 osobowe i pomijamy C++.
-
----
-# Zadanie domowe – Zeus
-
-1. Review kodu kolegów (czy metoda pomiarów jest taka sama).
-1. Uruchomienie kodów na klastrze Zeus w różnych konfiguracjach 
-   * 1 node fizyczny
-   * 2 nody fizyczne – patrz `man mpiexec`
-1. Przeprowadzenie pomiarów
-1. Wygenerowanie wykresów
-1. **Wnioski!**
 
 ---
 # Zasady oceniania zadania
@@ -214,7 +131,7 @@ Jeśli jest np. 13 osób – dopuszczamy zespoły 3 osobowe i pomijamy C++.
   * 2 punkty za poprawne wyniki,
   * 4 punkty za odpowiedź na pytania teoretyczne z danego zagadnienia.
 
----
+<!-- ---
 
 # Konta na serwerach Cyfronetu/PLGrid/Zeus
 
@@ -229,4 +146,4 @@ Jeśli jest np. 13 osób – dopuszczamy zespoły 3 osobowe i pomijamy C++.
     * Dostęp do UI - Cyfronet
     * Dostęp do klastra ZEUS
 3. `ssh login@ui.cyfronet.pl`
-4. HowTo: [https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid](https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid)
+4. HowTo: [https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid](https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid) -->
