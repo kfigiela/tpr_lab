@@ -1,4 +1,4 @@
-class: center, middle, inverse
+<!-- class: center, middle, inverse -->
 
 # Środowisko vCluster dla MPI
 
