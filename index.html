@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TPR: Organizacja</title>
+    <title>RemarkJS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="tile-view.css" type="text/css" media="screen" charset="utf-8">
@@ -122,7 +122,8 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="remark.min.js" type="text/javascript"></script>
   <script type="text/javascript">
-    var slideshow = remark.create({highlightStyle: 'monokai', ratio: '16:9', sourceUrl: "lab1.md"});
+    var source = (location.search == "")?"index.md":location.search.slice(1);
+    var slideshow = remark.create({highlightStyle: 'monokai', ratio: '16:9', sourceUrl: source});
   </script>
   
 </body>

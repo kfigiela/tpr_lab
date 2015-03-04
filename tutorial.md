@@ -2,7 +2,7 @@
 
 # Środowisko vCluster dla MPI
 
-Prezentacja: [kfigiela.github.io/tpr_lab/tutorial.html](http://kfigiela.github.io/tpr_lab/tutorial.html)
+Prezentacja: [kfigiela.github.io/tpr_lab/tutorial.html](http://kfigiela.github.io/tpr_lab/?tutorial.md)
 
 Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](https://github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md)
 

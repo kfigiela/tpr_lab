@@ -2,7 +2,7 @@
 
 # Techniki Programowania Równoległego
 
-Prezentacja: [kfigiela.github.io/tpr_lab/intro.html](http://kfigiela.github.io/tpr_lab/intro.html)
+Prezentacja: [kfigiela.github.io/tpr_lab/intro.html](http://kfigiela.github.io/tpr_lab/?intro.md)
 
 Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md](https://github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md)
 
