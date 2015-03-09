@@ -3,7 +3,7 @@
 # Techniki Programowania Równoległego
 ## Lab 1
 
-Prezentacja: [kfigiela.github.io/tpr_lab/lab1.html](http://kfigiela.github.io/tpr_lab/?lab1.md)
+Prezentacja: [kfigiela.github.io/tpr_lab/?lab1.md](http://kfigiela.github.io/tpr_lab/?lab1.md)
 
 Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/lab1.md](https://github.com/kfigiela/tpr_lab/blob/gh-pages/lab1.md)
 
