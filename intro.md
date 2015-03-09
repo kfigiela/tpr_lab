@@ -45,9 +45,9 @@ Wykład prowadzą:
 Zajęcia laboratoryjne prowadzą:
 
 * Część 1 (blokowo)
-  * dr inż. Renata Słota (1 zajęcia),
+  * dr inż. Włodzimierz Funika (2 zajęcia),
   * dr inż. Maciej Malawski (1 zajęcia),
-  * dr inż. Włodzimierz Funika (1 zajęcia),
+  * dr inż. Renata Słota (1 zajęcia),
   * mgr inż. Kamil Figiela (2 zajęcia),
   * mgr inż. Michał Orzechowski (2 zajęcia).
 * Część 2 (grupy) - ???
