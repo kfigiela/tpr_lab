@@ -131,6 +131,8 @@ Zajęcia laboratoryjne prowadzą:
   * 2 punkty za poprawne wyniki,
   * 4 punkty za odpowiedź na pytania teoretyczne z danego zagadnienia.
 
+
+---
 # Konta na serwerach Cyfronetu/PLGrid/Zeus
 
 1. http://plgrid.pl › Rejestracja
