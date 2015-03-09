@@ -99,17 +99,17 @@ Zajęcia laboratoryjne prowadzą:
 ---
 # Tematyka zajęć
 
-1. **MPI:** Podstawowe badania dotyczące opóźnienia i przepustowości – komunikacja typu punkt–punkt (spr. 1)
-1. **MPI:** Komunikacja grupowa (spr. 2, odbiór spr. 1) 
-1. **MPI:** Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
-1. **MPI:** Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
-1. **OpenMP** (odbiór spr. 3 i 4)
-1. **OpenMP** (spr. 5) 
-1. **MapReduce**
-1. **MapReduce** (odbiór spr. 5)
+1. **MPI (mgr inż. Kamil Figiela):** Podstawowe badania dotyczące opóźnienia i przepustowości – komunikacja typu punkt–punkt (spr. 1)
+1. **MPI (dr inż. Włodzimierz Funika):** Komunikacja grupowa (spr. 2, odbiór spr. 1) 
+1. **MPI (mgr inż. Kamil Figiela):** Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
+1. **MPI (dr inż. Maciej Malawski):** Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
+1. **OpenMP (dr inż. Renata Słota)** (odbiór spr. 3 i 4)
+1. **OpenMP (dr inż. Włodzimierz Funika)** (spr. 5) 
+1. **MapReduce (mgr inż. Michał Orzechowski)**
+1. **MapReduce (mgr inż. Michał Orzechowski)** (odbiór spr. 5)
 1. Uzupełnienia zaległych sprawozdań  (tylko u RS): 11 do 15 maja dla cz. I labów
-1. **GPU** (spr. 1)
-1. **GPU** (odbiór spr. 1)
+1. **GPU (dr inż. Monika Dekster)** (spr. 1)
+1. **GPU (dr inż. Paweł Topa)** (odbiór spr. 1)
 1. **GPU** (spr. 2)
 1. **GPU** (odbiór spr. 2)
 1. Uzupełnienia (u właściwego prowadzącego): 15-19 czerwca dla cz. II labów
