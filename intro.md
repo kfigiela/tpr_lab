@@ -37,12 +37,12 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md](https:/
 
 # Organizacja zajęć
 
-Wykład prowadzą:
+Wykład prowadzą:
 
-* dr inż. Renata Słota (~10, ocena końcowa)
-* dr inż. Witold Alda (5)
+* dr inż. Renata Słota (~10, ocena końcowa)
+* dr inż. Witold Alda (5)
 
-Zajęcia laboratoryjne prowadzą:
+Zajęcia laboratoryjne prowadzą:
 
 * Część 1 (blokowo)
   * dr inż. Renata Słota (1 zajęcia),
@@ -57,10 +57,10 @@ Zajęcia laboratoryjne prowadzą:
 
 * Wykład (egzamin):
   * egzamin zerowy ustny (~15–19 czerwca);
-  * dopuszczenie do egz. zerowego przy zal. 4.5 i  5.0 z labów; grupa secjalna
+  * dopuszczenie do egz. zerowego przy zal. 4.5 i  5.0 z labów; grupa secjalna
   * termin I = test, terminy: II i III (poprawki) ustne
 * Laboratorium (2/3 PR; 1/3 PR na GPU).
-* Ocena końcowa: średnia z egz. i zal. z lab, ze wskazaniem na laby. + ewentualne promocje (0.5 do 1 oceny w górę)
+* Ocena końcowa: średnia z egz. i zal. z lab, ze wskazaniem na laby. + ewentualne promocje (0.5 do 1 oceny w górę)
 
 * **Promocja**: referat na wykładzie wg tematu zaproponowanego przez RS lub, jeśli ciekawy, przez studenta (np. z prowadzonych  badań lub interesującego tematu; związek z TPR konieczny) (dostępne do wyczerpania zasobów); termin wygłoszenia referatu 5 maja
 * Istnieje **grupa specjalna** laboratoryjna (ilość miejsc ograniczona do max 15); zajęcia w tej grupie są na zasadzie obowiązkowych,  indywidualnych konsultacji; nabór polega na zapisie do grupy wtorek 12.50 na własna opowiedzialność ;) ćwiczenie będzie polegać na realizacji programu równoległego z wykorzystaniem min. 2 technologii z 4: MPI, OpenMP, MapReduce, GPU; temat do uzgodnienia z RS; brak postępów na konsultacjach oznacza powrót na zajęcia grupowe na wynegocjowanych warunkach.
@@ -99,10 +99,10 @@ Zajęcia laboratoryjne prowadzą:
 ---
 # Tematyka zajęć
 
-1. **MPI:** Podstawowe badania dotyczące opóźnienia i przepustowości – komunikacja typu punkt–punkt (spr. 1)
+1. **MPI:** Podstawowe badania dotyczące opóźnienia i przepustowości – komunikacja typu punkt–punkt (spr. 1)
 1. **MPI:** Komunikacja grupowa (spr. 2, odbiór spr. 1) 
-1. **MPI:** Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
-1. **MPI:** Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
+1. **MPI:** Równoległość idealna + Badanie efektywności algorytmu cz.1 (spr. 3, odbiór spr. 2)
+1. **MPI:** Typy pochodne, Mnożenie macierzy + Badanie efektywności algorytmu cz.2 (spr. 4)
 1. **OpenMP** (odbiór spr. 3 i 4)
 1. **OpenMP** (spr. 5) 
 1. **MapReduce**
@@ -131,8 +131,6 @@ Zajęcia laboratoryjne prowadzą:
   * 2 punkty za poprawne wyniki,
   * 4 punkty za odpowiedź na pytania teoretyczne z danego zagadnienia.
 
-<!-- ---
-
 # Konta na serwerach Cyfronetu/PLGrid/Zeus
 
 1. http://plgrid.pl › Rejestracja
@@ -146,4 +144,4 @@ Zajęcia laboratoryjne prowadzą:
     * Dostęp do UI - Cyfronet
     * Dostęp do klastra ZEUS
 3. `ssh login@ui.cyfronet.pl`
-4. HowTo: [https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid](https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid) -->
+4. HowTo: [https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid](https://docs.cyfronet.pl/display/PLGDoc/Dokumentacja+PL-Grid) 
