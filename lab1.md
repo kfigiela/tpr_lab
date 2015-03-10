@@ -61,7 +61,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/lab1.md](https://
 Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klastrze. 
 
 * Należy przetestować dwa różne typy komunikacji P2P w MPI.
-* Należy dokonać pomiarów::
+* Należy dokonać pomiarów:
   * przepustowości [Mbit/s] od długości komunikatów [B]: wykres,
   * opóźnienia [ms] przesyłania krótkiego komunikatu: wartość. 
 * Zespoły 3 osobowe:

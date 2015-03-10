@@ -92,7 +92,7 @@ Zajęcia laboratoryjne prowadzą:
 * Łącznie można zdobyć 44 punktów.
 * Za 100% tej części przyjmujemy 40 punktów, ze względu na uznaniowość aktywności.
 
-**Oceny wyliczane są zgodnie z regulaminem studiów, za 100% przyjmujemy 80+40=120 punktó**
+**Oceny wyliczane są zgodnie z regulaminem studiów, za 100% przyjmujemy 80+40=120 punktów.**
 
 **Zasady te są opublikowane na [Moodle](http://upel.agh.edu.pl/wiet/pluginfile.php/13641/mod_resource/content/1/zasady-2015.pdf) i to jest wiążący dokument.**
 
