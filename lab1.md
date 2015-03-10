@@ -46,6 +46,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/lab1.md](https://
 * Sprawdź zwykłą i buforowaną komunikację.
 * Zmierz opóźnienie (przyda się funkcja `MPI_Wtime`).
 * **W jaki sposób należy dokonać pomiaru?**
+* **Do czego służy `MPI_Barrier`?**
 
 ---
 # Ćwiczenie 3
