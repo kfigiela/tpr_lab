@@ -1,4 +1,4 @@
-<!-- class: middle, inverse -->
+<!-- class: middle -->
 
 # Techniki Programowania Równoległego
 
