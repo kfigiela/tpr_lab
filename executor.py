@@ -14,3 +14,6 @@ cmd = "module add openmpi/1.6.4-gnu-4.7.2-ib && (mpiexec -np %s %s/pi_mpi %s > o
 
 status, output = commands.getstatusoutput(cmd)
 print output
+
+# w kodzie pi_mpi...
+# printf("{\"status\": \"ok\", \"results\": { \"steps\": %ld, \"time\": %lf, \"value\": %lf}}\n", steps, time, pi);
