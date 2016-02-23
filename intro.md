@@ -13,7 +13,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md](https:/
 
 * 1 i 3 zajęcia 
 * Preferowany kontakt mailowy: [kfigiela@agh.edu.pl](mailto:kfigiela@agh.edu.pl)
-* Można mnie spoktać na forum
+* Można mnie spotkać na forum
 * Pokój 3.42
 
 ---
