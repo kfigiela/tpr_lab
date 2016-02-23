@@ -10,7 +10,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](http
 # Środowisko
 
 * `ssh vnode-01.dydaktyka.icsr.agh.edu.pl` albo po prostu `ssh vnode-01`
-* Klaster dostępny m.in. z serwera `gandalf.icsr.agh.edu.pl`
+* Klaster dostępny m.in. z serwera `jabba.icsr.agh.edu.pl`
 * Credentiale takie same jak na gandalfie
 * SSH z gandalfa nie wymaga podawania hasła
 * `$HOME` jest współdzielony z gandalfem (NFS)
@@ -32,7 +32,7 @@ export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 ```
 * Dla zainteresowanych – dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
 * Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
-  
+
 ---
 ## Hello world! w Pythonie
 
@@ -141,7 +141,7 @@ int main(int argc, char** argv) {
   // We are assuming at least 2 processes for this task
   if (world_size < 2) {
     fprintf(stderr, "World size must be greater than 1 for %s\n", argv[0]);
-    MPI_Abort(MPI_COMM_WORLD, 1); 
+    MPI_Abort(MPI_COMM_WORLD, 1);
   }
   int number;
   if (world_rank == 0) {
@@ -273,7 +273,7 @@ Moduły `libs/boost/1.41.0` oraz `libs/boost/1.52.0` mają skompilowane wsparcie
  'tools/python/2.7.2-ucs4' load complete.
  'tools/openmpi/1.6.3-gnu-4.1.2-ib' load complete.
  'libs/boost/1.52.0' load complete.
- 
+
 [plgkfigiela@zeus tpr_lab]$ pip install --user mpi4py
 ....
 
