@@ -9,7 +9,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](http
 ---
 # Środowisko
 
-* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl` albo po prostu `ssh vnode-01`
+* `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
 * Klaster dostępny m.in. z serwera `jabba.icsr.agh.edu.pl`
 * Credentiale takie same jak na gandalfie
 * SSH z gandalfa nie wymaga podawania hasła
