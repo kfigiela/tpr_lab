@@ -65,14 +65,15 @@ Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klast
 * Należy dokonać pomiarów:
   * przepustowości [Mbit/s] od długości komunikatów [B]: wykres,
   * opóźnienia [ms] przesyłania krótkiego komunikatu: wartość. 
-* Implementacja w C lub Python
+* Implementacja w C lub Python.
 * **Sugestia:** Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org)/[ggplot2](http://ggplot2.org).
+* **Wnioski i wykresy!**
 
 <!-- * **Uwaga!** W C++/Boost dostępna jest tylko komunikacja standardowa i tylko taką można w tam przetestować.
   * Testy dla komunikacji standardowej.
   * Przetestować wbudowane w bibliotekę boost mechanizmy automatycznej serializacji standardowych struktur z STL (vector, map, string, etc.) - ocenić overhead serializacji dla typu `vector`.  -->
 
----
+<!--
 # Zadanie domowe – Zeus
 
 1. Review kodu kolegów (czy metoda pomiarów jest taka sama).
@@ -82,3 +83,4 @@ Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klast
 1. Przeprowadzenie pomiarów
 1. Wygenerowanie wykresów
 1. **Wnioski!**
+-->
