@@ -65,12 +65,8 @@ Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klast
 * Należy dokonać pomiarów:
   * przepustowości [Mbit/s] od długości komunikatów [B]: wykres,
   * opóźnienia [ms] przesyłania krótkiego komunikatu: wartość. 
-* Zespoły 3 osobowe:
-  * 2 osoby implementują testy w C/Python,
-  * testy powinny być przeprowadzone tą samą metodą (algorytm, liczba iteracji, zakres rozmiaru danych itp.),
-  * trzecia osoba uruchamia kody pozostałych osób i przeprowadza testy na klastrze Zeus.
+* Implementacja w C lub Python
 * **Sugestia:** Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org)/[ggplot2](http://ggplot2.org).
-* Podział na zespoły: [http://goo.gl/forms/K78G2elg4P](http://goo.gl/forms/K78G2elg4P)
 
 <!-- * **Uwaga!** W C++/Boost dostępna jest tylko komunikacja standardowa i tylko taką można w tam przetestować.
   * Testy dla komunikacji standardowej.
