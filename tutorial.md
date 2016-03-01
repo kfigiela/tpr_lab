@@ -39,6 +39,7 @@ export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 
 * Dokumentacja mpi4py: [http://mpi4py.scipy.org/docs/usrman/index.html](http://mpi4py.scipy.org/docs/usrman/index.html)
 * API: [http://mpi4py.scipy.org/docs/apiref/index.html](http://mpi4py.scipy.org/docs/apiref/index.html)
+* Dobry tutorial: [https://wiki.gwdg.de/index.php/Mpi4py](https://wiki.gwdg.de/index.php/Mpi4py)
 
 ```python
 #!/usr/bin/env python
