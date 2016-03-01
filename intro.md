@@ -27,7 +27,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md](https:/
 
 * Kurs: Techniki programowania równoległego
 * [http://upel.agh.edu.pl/wiet/course/view.php?id=277](http://upel.agh.edu.pl/wiet/course/view.php?id=277)
-* Klucz do kursu: `TPR2016`
+* Klucz do kursu: `TPR2016-(wt|cz)(11|12|17|19)`
 
 
 ---
@@ -35,14 +35,14 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/intro.md](https:/
 
 * Wykład (egzamin):
   * egzamin zerowy ustny (~6–10 czerwca);
-  * dopuszczenie do egz. zerowego przy zal. 4.5 i 5.0 z labów i uzyskanie tej oceny przed terminem zerowym,
+  * dopuszczenie do egz. zerowego przy zal. 4.5 i 5.0 z labów i uzyskanie tej oceny przed terminem zerowym,
   * termin I = test, terminy: II i III (poprawki) ustne
 * Laboratorium (~2/3 PR; ~1/3 PR na GPU).
 * Ocena końcowa: średnia z egz. i zal. z lab, ze wskazaniem na laby. + ewentualne promocje (0.5 do 1 oceny w górę)
 
 * **Promocja**: referat na wykładzie wg tematu zaproponowanego przez RS lub, jeśli ciekawy, przez studenta (np. z prowadzonych  badań lub interesującego tematu; związek z TPR konieczny) (dostępne do wyczerpania zasobów); termin wygłoszenia referatu 25 kwietnia
-* Istnieje możliwość wykorzystania promocji do podniesienia oceny z labów, co może dać wejście na zerówkę
-* Istnieje możliwość, że oddający sprawozdania w "awaryjnych" terminach nie będą mogli podejść do zerówki.
+* Istnieje możliwość wykorzystania promocji do podniesienia oceny z labów, co może dać wejście na zerówkę
+* Istnieje możliwość, że oddający sprawozdania w "awaryjnych" terminach nie będą mogli podejść do zerówki.
 
 
 ---
