@@ -32,6 +32,7 @@ export PYTHONPATH=/usr/lib64/python2.6/site-packages/mpich2
 ```
 * Dla zainteresowanych – dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna)
 * Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
+* Alternatywnie (jeśli coś się wywraca): `mpiexec.hydra` (opcje takie same)
 
 ---
 ## Hello world! w Pythonie
