@@ -11,9 +11,9 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](http
 
 * `ssh vnode-01.dydaktyka.icsr.agh.edu.pl`
 * Klaster dostępny m.in. z serwera `jabba.icsr.agh.edu.pl`
-* Credentiale takie same jak na gandalfie
-* SSH z gandalfa nie wymaga podawania hasła
-* `$HOME` jest współdzielony z gandalfem (NFS)
+* Credentiale takie z accounts.ki.agh.edu.pl
+* SSH z jabby nie wymaga podawania hasła
+* `$HOME` jest współdzielony z katedralnym NFSem
 * Większe operacje IO lepiej wykonywać w lokalnym `/tmp`
 * Klaster jest zwirtualizowany
   * 4 maszyny x 4 CPU (nody 01, 02, 03, 04)
