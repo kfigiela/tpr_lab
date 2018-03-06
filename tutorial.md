@@ -24,7 +24,7 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](http
 ### Konfiguracja
 
 * Przykłady: `git clone https://github.com/kfigiela/tpr_lab.git -b lab1`
-* Tworzymy plik `mpihosts` (tzw. machinefile)
+* Tworzymy plik `allnodes` (tzw. machinefile)
 * Dla zainteresowanych – dostępne są dwie implementacje MPI: OpenMPI i MPICH2 (domyślna). Aktywacja OpenMPI:
 ```shell
 export PATH=/usr/lib64/openmpi/bin:$PATH
