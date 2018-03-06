@@ -29,11 +29,12 @@ Wersja do czytania: [github.com/kfigiela/tpr_lab/blob/gh-pages/tutorial.md](http
 ```shell
 export PATH=/usr/lib64/openmpi/bin:$PATH
 export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib
-#export PYTHONPATH=/usr/lib64/python2.7/site-packages/openmpi:/usr/lib64/python2.7/site-packages/openmpi
+export PYTHONPATH=/usr/lib64/python2.7/site-packages/openmpi:/usr/lib64/python2.7/site-packages/openmpi
 ``
 * Uruchamianie: `mpiexec`, warto zajrzeć do `man mpiexec`
 
 ---
+
 ## Hello world! w Pythonie
 
 * Dokumentacja mpi4py: [http://mpi4py.scipy.org/docs/usrman/index.html](http://mpi4py.scipy.org/docs/usrman/index.html)
@@ -56,6 +57,7 @@ $ mpiexec -machinefile ./allnodes -np [liczba procesów] ./hello_world.py
 ```
 
 ---
+
 ## Komunikacja w Pythonie
 
 ```python
