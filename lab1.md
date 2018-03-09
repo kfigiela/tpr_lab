@@ -68,6 +68,11 @@ Celem zadania jest zmierzenie opóźnienia i przepustowości połączeń w klast
 * Implementacja w C lub Python.
 * **Sugestia:** Do rysowania wykresów można użyć [Gnuplot](http://www.gnuplot.info) lub [R](http://www.r-project.org)/[ggplot2](http://ggplot2.org).
 * **Wnioski i wykresy!**
+* Proszę przeprowadzić testy w następujących konfiguracjach:
+  * Komunikacja na 1 nodzie (pamięć współdzielona)
+  * Komunikacja na 1 nodzie (bez pamięci współdzielonej, przez sieć)
+  * Komunikacja między 2 nodami na tym samym hoście fizycznym (nody01-03?) (przez sieć)
+  * Komunikacja między 2 nodami na różnych hostach fizycznych (przez sieć)
 
 <!-- * **Uwaga!** W C++/Boost dostępna jest tylko komunikacja standardowa i tylko taką można w tam przetestować.
   * Testy dla komunikacji standardowej.
